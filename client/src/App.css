@@ -1,0 +1,51 @@
+body{
+  background-color: antiquewhite;
+}
+
+.App {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+
+}
+
+.data input {
+  width: 250px;
+  height: 30px;
+  font-size: 22px;
+}
+
+.data button{
+  width: 100px;
+  height: 40px; 
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.data button:hover{
+  cursor: pointer;
+}
+
+.box {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(215, 231, 235);
+  width: 170px;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: .8em;
+
+}
