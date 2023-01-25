@@ -19,7 +19,7 @@ export function getAcceleration(cargo){
 export function getTakeOffDistance(cargo){
     let acceleration = getAcceleration(cargo);
     let takeoff_time = getTakeOffTime(cargo);
-    return ( (acceleration * Math.pow(takeoff_time,2))/2 + (aircraft_speed * takeoff_time) );
+        return ( (acceleration * Math.pow(takeoff_time,2))/2 + 0 ); // v_0 * t = 0
 }
 
 //func 3 - gets the cargo weight
