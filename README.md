@@ -204,7 +204,6 @@ m=42,857.142
 
 # **קורות חיים- מעודכן**
 <div dir="rtl">
-![image](https://user-images.githubusercontent.com/67608539/214898759-6e740cad-70af-4e3a-88fa-32164a7282f5.png)
-</div>
+![image](https://user-images.githubusercontent.com/67608539/214899193-e7834db2-d0a3-469c-89ab-dcd2424895af.png)</div>
 
 
