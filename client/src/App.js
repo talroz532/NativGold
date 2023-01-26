@@ -38,8 +38,6 @@ function App() {
   };
 
 
-
-
   //get the cargo data
   //return if the input is valid 
   const validInput = (cargo) => {
@@ -100,8 +98,6 @@ const handleDate = async () => {
     <OutputBox text={`Takeoff Time: ${takeoff_time}`} />
     <OutputBox text={`Takeoff Distance: ${takeoff_distance}`} />
     <OutputBox text={`Excess Cargo: ${excess_cargo}`} />
-    
-
     
     <br />
     <label>Enter flight date:</label>
