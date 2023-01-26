@@ -42,7 +42,7 @@ server on port 3001
 docker-compose build
 ```
 ```
-docker-compose up -d`
+docker-compose up -d
 ```
 make sure it works:
 ```
