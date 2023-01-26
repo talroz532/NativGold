@@ -16,19 +16,27 @@ function App() {
 
 
   //send the data to /insert-data in order to store it in the db
-  const insertData = () => {
-    axios.post("http://localhost:3001/insert-data", {
-      takeoff_time: takeoff_time.toString(),
-      takeoff_distance: takeoff_distance.toString(),
-      excess_cargo: excess_cargo.toString(),
-      cargo: cargo.toString(),
-      
-  }).then(()=> {
-  console.log("success");
-  }).catch((error) => {
-    console.error(error);
-  });
-};
+  const insertData = (
+    newTakeOffTime,
+    newTakeOffDistance,
+    newExcessCargo,
+    cargo
+  ) => {
+    axios
+      .post("http://localhost:3001/insert-data", {
+        takeoff_time: newTakeOffTime.toString(),
+        takeoff_distance: newTakeOffDistance.toString(),
+        excess_cargo: newExcessCargo.toString(),
+        cargo: cargo.toString(),
+      })
+      .then(() => {
+        console.log("success");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
 
 
 
@@ -46,21 +54,24 @@ function App() {
 
   }
   
-  //A function that centralizes the actions
-  const handleData = () => {
-    if(validInput(cargo)){
+ //A function that centralizes the actions
+ const handleData = () => {
+  if (validInput(cargo)) {
+    //update the variables every time it change
+    const newAcceleration = functions.getAcceleration(cargo);
+    const newTakeOffTime = functions.getTakeOffTime(cargo);
+    const newTakeOffDistance = functions.getTakeOffDistance(cargo);
+    const newExcessCargo = functions.getExcessCargo(cargo);
 
-      //update the variables every time it change
-      setAcceleration(functions.getAcceleration(cargo));
-      setTakeOffTime(functions.getTakeOffTime(cargo));
-      setTakeOffDistance(functions.getTakeOffDistance(cargo));
-      setExcessCargo(functions.getExcessCargo(cargo));
+    setAcceleration(newAcceleration);
+    setTakeOffTime(newTakeOffTime);
+    setTakeOffDistance(newTakeOffDistance);
+    setExcessCargo(newExcessCargo);
 
-      //call the insert function
-      insertData();
-    }
-
+    //call the insert function
+    insertData(newTakeOffTime, newTakeOffDistance, newExcessCargo, cargo);
   }
+};
 
  //asynchronous func to handle the date data
 const handleDate = async () => {
@@ -81,7 +92,7 @@ const handleDate = async () => {
 
     <h1>Shimshon physics calculator</h1>
     <label>Enter cargo weight:</label>
-    <input type="number" onChange={ (event) => {setCargo(event.target.valueAsNumber)}}/>
+    <input type="number"  value={cargo} onChange={ (event) => {setCargo(event.target.valueAsNumber)}}/>
 
     <button onClick={handleData}>Send data</button>
 
@@ -94,7 +105,7 @@ const handleDate = async () => {
     
     <br />
     <label>Enter flight date:</label>
-    <input type= "date" onChange={(event) => { setDate(event.target.value) }} />
+    <input type= "date" value={date} onChange={(event) => { setDate(event.target.value) }} />
     <button onClick={handleDate}>Send date</button>
 
     <OutputBox text={`you ${ message } able to filght`} />
