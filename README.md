@@ -203,5 +203,6 @@ m=42,857.142
 
 
 # **קורות חיים- מעודכן**
-![image](https://user-images.githubusercontent.com/67608539/229211160-9f2d49a8-85f3-4ec7-81ce-ded203123626.png)
+![image](https://github.com/talroz532/NativGold/assets/67608539/bd958b54-3aa4-4172-aab0-6c2b8926ea08)
+
 
